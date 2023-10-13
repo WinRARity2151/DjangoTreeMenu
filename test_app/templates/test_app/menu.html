@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <!-- Загрузка статических файлов (CSS) из папки 'static' -->
+    <link rel="stylesheet" type="text/css" href="{% static '/test_app/css/style.css' %}">
+</head>
+<body>
+    {% load menu_tags %}
+    <!-- Загрузка шаблонных тегов из приложения 'menu_tags' -->
+    <!-- Отображение древовидного меню, начиная с текущего запроса (request) -->
+    {% tree request=request name='' %}
+    {% comment %}
+    <!-- Так же может быть использовано, как {% draw_menu 'main_menu' %}-->
+    <!-- Пример: {% tree request=request name='/index' %}-->
+    <!-- Таким образом мы можем прикрепить на любую страницу фиксированное меню-->
+    {% endcomment %}
+</body>
+</html>
+
+

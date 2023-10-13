@@ -1,0 +1,18 @@
+<!-- my_page.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <!-- Загрузка статических файлов (CSS) из папки 'static' -->
+    <link rel="stylesheet" type="text/css" href="{% static '/test_app/css/style.css' %}">
+    <title>Моя Отдельная Страница</title>
+</head>
+<body>
+    {% load menu_tags %}
+    <!-- Загрузка шаблонных тегов из приложения 'menu_tags' -->
+    {% tree request=request name='/subpage1' %}
+    {% comment %}
+    <!-- Пример использования, как {% draw_menu 'main_menu' %}-->
+    {% endcomment %}
+</body>
+</html>
